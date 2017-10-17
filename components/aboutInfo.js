@@ -5,11 +5,32 @@ import Button from 'react-native-button';
 import TopBanner from './topBanner';
 export default class AboutInfo extends Component {
   render() {
+    let homeTeamArena = this.props.teams.map((item) => {
+      if(this.props.params.homeTeamName === item.name) {
+        return(
+          <Text key={item.id} style={styles.text}>{item.stadium}</Text>
+        );
+      }
+    });
+    let homeTeamManager = this.props.teams.map((item) => {
+      if(this.props.params.homeTeamName === item.name) {
+        return(
+          <Text key={item.id} style={styles.managerText}>{item.coach}</Text>
+        );
+      }
+    });
+    let awayTeamManager = this.props.teams.map((item) => {
+      if(this.props.params.awayTeamName === item.name) {
+        return(
+          <Text key={item.id} style={styles.managerText}>{item.coach}</Text>
+        );
+      }
+    });
     return(
       <View style={styles.centerContainer}>
         <View style={styles.firstContainer}>
           <Image style={styles.img} source={require('../img/icon.png')} />
-          <Text style={styles.text}>Old Trafford, Manchester</Text>
+          {homeTeamArena}
         </View>
         <View style={styles.secondContainer}>
           <Image style={styles.img} source={require('../img/trophy.png')} />
@@ -18,9 +39,9 @@ export default class AboutInfo extends Component {
         <View style={styles.thirdContainer}>
           <Text style={styles.text2}>Manager</Text>
           <View style={styles.managerContainer}>
-            <Text style={styles.managerText}>José Mourinho</Text>
+            {homeTeamManager}
               <Image style={styles.img2} source={require('../img/user.png')} />
-            <Text style={styles.managerText}>Jurgen Klopp</Text>
+            {awayTeamManager}
           </View>
         </View>
         <View style={styles.fourthContainer}>

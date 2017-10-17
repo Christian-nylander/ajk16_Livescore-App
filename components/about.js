@@ -10,39 +10,39 @@ const width = '72%';
 const height = '40%';
 
 export default class About extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     teams: []
-  //   }
-  // }
+  constructor() {
+    super();
+    this.state = {
+      teams: []
+    }
+  }
 
-  // componentDidMount = () => {
-  //   fetch('https://raw.githubusercontent.com/eriksvedenlund/teamData/master/teams.json')
-  //     .then((response) => response.json())
-  //     .then((response) => {
-  //       this.setState({
-  //         teams: response.teams
-  //       });
-  //     })
-  // }
+  componentDidMount = () => {
+    fetch('https://raw.githubusercontent.com/eriksvedenlund/teamData/master/teams.json')
+      .then((response) => response.json())
+      .then((response) => {
+        this.setState({
+          teams: response.teams
+        });
+      })
+  }
 
   render() {
-    // let {params} = this.props.navigation.state;
-    // let homeTeamImage = this.state.teams.map((item) => {
-    //   if(params.homeTeamName === item.name){
-    //     return(
-    //       <Image key={item.id} style={styles.img} source={{uri: item.img}} />
-    //     );
-    //   }
-    // });
-    // let awayTeamImage = this.state.teams.map((item) => {
-    //   if(params.awayTeamName === item.name){
-    //     return(
-    //       <Image key={item.id} style={styles.img} source={{uri: item.img}} />
-    //     );
-    //   }
-    // });
+    let {params} = this.props.navigation.state;
+    let homeTeamImage = this.state.teams.map((item) => {
+      if(params.homeTeamName === item.name){
+        return(
+          <Image key={item.id} style={styles.img} source={{uri: item.img}} />
+        );
+      }
+    });
+    let awayTeamImage = this.state.teams.map((item) => {
+      if(params.awayTeamName === item.name){
+        return(
+          <Image key={item.id} style={styles.img} source={{uri: item.img}} />
+        );
+      }
+    });
     return(
       <View style={styles.grogg}>
         <View style={styles.upperContainer}>
@@ -50,16 +50,16 @@ export default class About extends Component {
             style={styles.landing}
             source={require('../img/aa.jpg')}>
             <View style={styles.info}>
-                <Image style={styles.img} source={require('../img/580b57fcd9996e24bc43c4e7.png')} />
+                {homeTeamImage}
                 <View style={styles.infoOrder}>
                   <Text style={styles.text1}>THURSDAY</Text>
                   <Text style={styles.text2}>18 MAY 2017</Text>
                   <Text style={styles.text2}>19:00</Text>
                 </View>
-                <Image style={styles.img} source={require('../img/580b57fcd9996e24bc43c4e7.png')} />
+                {awayTeamImage}
             </View>
           </Image>
-          <AboutInfo />
+          <AboutInfo teams={this.state.teams} params={params}/>
         </View>
       </View>
 

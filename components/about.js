@@ -7,9 +7,39 @@ import TopBanner from './topBanner';
 import AboutInfo from './aboutInfo'
 
 export default class About extends Component {
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     teams: []
+  //   }
+  // }
 
+  // componentDidMount = () => {
+  //   fetch('https://raw.githubusercontent.com/eriksvedenlund/teamData/master/teams.json')
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       this.setState({
+  //         teams: response.teams
+  //       });
+  //     })
+  // }
 
   render() {
+    // let {params} = this.props.navigation.state;
+    // let homeTeamImage = this.state.teams.map((item) => {
+    //   if(params.homeTeamName === item.name){
+    //     return(
+    //       <Image key={item.id} style={styles.img} source={{uri: item.img}} />
+    //     );
+    //   }
+    // });
+    // let awayTeamImage = this.state.teams.map((item) => {
+    //   if(params.awayTeamName === item.name){
+    //     return(
+    //       <Image key={item.id} style={styles.img} source={{uri: item.img}} />
+    //     );
+    //   }
+    // });
     return(
       <View>
         <View style={styles.upperContainer}>

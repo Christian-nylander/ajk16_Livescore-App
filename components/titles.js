@@ -10,7 +10,26 @@ import LeagueOne from './leagueOne';
 import LeagueTwo from './leagueTwo';
 import About from './about.js'
 export default class Titles extends Component {
+  constructor() {
+    super();
+    this.state = {
+      matches: []
+    }
+  }
 
+  componentDidMount = () => {
+    fetch('http://api.football-data.org/v1/competitions/445/fixtures', {
+      headers: {
+        'X-Auth-Token': 'cf642110fe7d494e9b8852f4f338f6de'
+      }
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        this.setState({
+          matches: response.fixtures
+        });
+      })
+  }
 
   static navigationOptions = {
     title: 'Livescore App'
@@ -18,9 +37,12 @@ export default class Titles extends Component {
 
 
   render() {
+    let {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-      <About />
+        <TopBanner />
+        <DatePicker />
+        <LeagueOne navigate={navigate} matches={this.state.matches} />
       </ScrollView>
     );
   }

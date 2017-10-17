@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image } from 'react-native';
 import { Constants } from 'expo';
 import Button from 'react-native-button';
-
 import TopBanner from './topBanner';
-
 export default class AboutInfo extends Component {
   render() {
     return(
@@ -47,10 +45,10 @@ export default class AboutInfo extends Component {
     );
   }
 }
-
 const styles = StyleSheet.create({
   centerContainer: {
     flex: 1,
+    top: 100,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -92,7 +90,6 @@ const styles = StyleSheet.create({
     color: "white",
     textAlign: "center",
     fontSize: 14,
-
   },
   managerText: {
     color: "white",

@@ -1,34 +1,14 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image} from 'react-native';
+import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image, TouchableHighlight} from 'react-native';
 import { Constants } from 'expo';
+import Button from 'react-native-button';
 
 export default class renderLeagueOne extends Component {
-  constructor() {
-    super();
-    this.state = {
-      matches: []
-    }
-  }
-
-  static navigationOptions = {
-    title: 'Firstscreen'
-  };
-  
-  componentDidMount = () => {
-    fetch('http://api.football-data.org/v1/competitions/445/fixtures')
-      .then((response) => response.json())
-      .then((response) => {
-        this.setState({
-          matches: response.fixtures
-        });
-      })
-  }
-
   render() {
-    // let {navigate} = this.props.navigation;
-    let matches = this.state.matches;
+    let navigate = this.props.navigate;
+    let matches = this.props.matches
     let matchData = matches.map((item, index) => {
-      if(item.status === "TIMED"){
+      if(item.status === "FINISHED"){
         let time = item.date.substring(11, 16);
         let homeScore = item.result.goalsHomeTeam;
         let awayScore = item.result.goalsAwayTeam;
@@ -50,10 +30,12 @@ export default class renderLeagueOne extends Component {
               </View>
             </View>
             <View style={styles.boxTwo}>
-              <Image
-                style={styles.infoImage}
-                source={require('../img/Untitled-3.png')}
-              />
+              <TouchableHighlight onPress={() => navigate("About")}>
+                <Image
+                  style={styles.infoImage}
+                  source={require('../img/Untitled-3.png')}
+                />
+              </TouchableHighlight>
             </View>
           </View>
         );

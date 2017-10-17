@@ -32,7 +32,16 @@ export default class Titles extends Component {
   }
 
   static navigationOptions = {
-    title: 'Livescore App'
+  title: 'Live Score App',
+  headerTintColor: '#FFFFFF',
+  headerStyle: {
+  backgroundColor: '#141414',
+  borderBottomColor: 'gray',
+  borderBottomWidth: 1,
+  },
+  headerTitleStyle: {
+  fontSize: 18,
+  }
   };
 
 

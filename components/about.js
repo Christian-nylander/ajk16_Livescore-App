@@ -6,6 +6,9 @@ import Button from 'react-native-button';
 import TopBanner from './topBanner';
 import AboutInfo from './aboutInfo'
 
+const width = '72%';
+const height = '40%';
+
 export default class About extends Component {
   // constructor() {
   //   super();
@@ -41,7 +44,7 @@ export default class About extends Component {
     //   }
     // });
     return(
-      <View>
+      <View style={styles.grogg}>
         <View style={styles.upperContainer}>
           <Image
             style={styles.landing}
@@ -56,28 +59,34 @@ export default class About extends Component {
                 <Image style={styles.img} source={require('../img/580b57fcd9996e24bc43c4e7.png')} />
             </View>
           </Image>
+          <AboutInfo />
         </View>
-        <AboutInfo />
       </View>
+
     );
   }
 }
 
 const styles = StyleSheet.create({
+  grogg: {
+    flex: 1,
+    backgroundColor: "#141414"
+  },
   landing: {
     height: 220
   },
   upperContainer: {
+    flex: 1,
     height: 220,
   },
   img: {
-    width: 100,
-    height: 100
+    width: 70,
+    height: 70
   },
   info: {
-    top: 60,
-    width: 410,
-    flex: 1,
+    width,
+    height,
+    top: 70,
     flexDirection: 'row',
     justifyContent:"space-around"
   },

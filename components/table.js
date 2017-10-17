@@ -60,6 +60,6 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     // justifyContent: 'space-around',
     // paddingTop: Constants.statusBarHeight,
-    // backgroundColor: '#141414',
+    backgroundColor: '#141414',
   }
 });

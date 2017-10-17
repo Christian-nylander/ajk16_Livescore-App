@@ -48,7 +48,6 @@ export default class AboutInfo extends Component {
 const styles = StyleSheet.create({
   centerContainer: {
     flex: 1,
-    top: 100,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -57,7 +56,7 @@ const styles = StyleSheet.create({
     width: 300,
     height: 70,
     borderBottomColor: '#bbb',
-    borderBottomWidth: StyleSheet.hairlineWidth
+    borderBottomWidth: StyleSheet.hairlineWidth,
   },
   secondContainer: {
     width: 300,
@@ -83,17 +82,17 @@ const styles = StyleSheet.create({
   text: {
     color: "white",
     textAlign: "center",
-    fontSize: 18,
+    fontSize: 16,
     top: -10,
   },
   text2: {
     color: "white",
     textAlign: "center",
-    fontSize: 14,
+    fontSize: 12,
   },
   managerText: {
     color: "white",
-    fontSize: 14,
+    fontSize: 12,
     top: 10
   },
   managerContainer: {
@@ -115,7 +114,7 @@ const styles = StyleSheet.create({
   streaks: {
     flex: 1,
     flexDirection: "row",
-    left: 10,
+    left: 7,
   },
   img3: {
     top: 6

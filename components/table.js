@@ -9,11 +9,10 @@ let count = true;
 export default class Table extends Component {
   constructor(){
     super();
-
     this.state = {
       table: []
     }
-  }
+  }rr
 
    componentDidMount = () => {
     fetch('http://api.football-data.org/v1/competitions/445/leagueTable', {
@@ -42,21 +41,21 @@ export default class Table extends Component {
           <View style={styles.containerOne}>
             <Text style={styles.text}>{item.position}</Text>
           </View>
-          <View style={styles.containerTwo}>
-            <Text style={styles.text1}>{item.teamName}</Text>
-          </View>
-          <View style={styles.containerThree}>
-            <Text style={styles.text1}>{item.playedGames}</Text>
-          </View>
-          <View style={styles.containerThree}>
-            <Text style={styles.text1}>{item.wins}</Text>
-          </View>
-          <View style={styles.containerThree}>
-            <Text style={styles.text1}>{item.draws}</Text>
-          </View>
-          <View style={styles.containerThree}>
-            <Text style={styles.text1}>{item.losses}</Text>
-          </View>
+            <View style={styles.containerTwo}>
+              <Text style={styles.text1}>{item.teamName}</Text>
+            </View>
+              <View style={styles.containerThree}>
+                <Text style={styles.text1}>{item.playedGames}</Text>
+              </View>
+                <View style={styles.containerThree}>
+                  <Text style={styles.text1}>{item.wins}</Text>
+                </View>
+              <View style={styles.containerThree}>
+                <Text style={styles.text1}>{item.draws}</Text>
+              </View>
+            <View style={styles.containerThree}>
+              <Text style={styles.text1}>{item.losses}</Text>
+            </View>
           <View style={styles.containerThree}>
             <Text style={styles.text1}>{item.points}</Text>
           </View>
@@ -71,21 +70,21 @@ export default class Table extends Component {
           <View style={styles.containerOne2}>
             <Text style={styles.text}>{item.position}</Text>
           </View>
-          <View style={styles.containerTwo2}>
-            <Text style={styles.text1}>{item.teamName}</Text>
-          </View>
-          <View style={styles.containerThree2}>
-            <Text style={styles.text1}>{item.playedGames}</Text>
-          </View>
-          <View style={styles.containerThree2}>
-            <Text style={styles.text1}>{item.wins}</Text>
-          </View>
-          <View style={styles.containerThree2}>
-            <Text style={styles.text1}>{item.draws}</Text>
-          </View>
-          <View style={styles.containerThree2}>
-            <Text style={styles.text1}>{item.losses}</Text>
-          </View>
+            <View style={styles.containerTwo2}>
+              <Text style={styles.text1}>{item.teamName}</Text>
+            </View>
+              <View style={styles.containerThree2}>
+                <Text style={styles.text1}>{item.playedGames}</Text>
+              </View>
+                <View style={styles.containerThree2}>
+                  <Text style={styles.text1}>{item.wins}</Text>
+                </View>
+              <View style={styles.containerThree2}>
+                <Text style={styles.text1}>{item.draws}</Text>
+              </View>
+            <View style={styles.containerThree2}>
+              <Text style={styles.text1}>{item.losses}</Text>
+            </View>
           <View style={styles.containerThree2}>
             <Text style={styles.text1}>{item.points}</Text>
           </View>
@@ -96,28 +95,31 @@ export default class Table extends Component {
     return(
       <ScrollView>
         <View style={styles.leagueContainer}>
-
-
+          <Image
+            style={styles.flag}
+            source={require('../img/1200px-Flag_of_England.svg.png')}
+          />
+          <Text style={styles.leaguetext}> Premier League</Text>
         </View>
         <View style={styles.container}>
           <View style={styles.bannerFlexOne}>
             <Text style={styles.text}>#</Text>
           </View>
-          <View style={styles.bannerFlexTwo}>
-            <Text style={styles.text1}>Club</Text>
-          </View>
-          <View style={styles.bannerFlexThree}>
-            <Text style={styles.text1}>P</Text>
-          </View>
-          <View style={styles.bannerFlexThree}>
-            <Text style={styles.text1}>W</Text>
-          </View>
-          <View style={styles.bannerFlexThree}>
-            <Text style={styles.text1}>D</Text>
-          </View>
-          <View style={styles.bannerFlexThree}>
-            <Text style={styles.text1}>L</Text>
-          </View>
+            <View style={styles.bannerFlexTwo}>
+              <Text style={styles.text1}>Club</Text>
+            </View>
+              <View style={styles.bannerFlexThree}>
+                <Text style={styles.text1}>P</Text>
+                </View>
+                <View style={styles.bannerFlexThree}>
+                  <Text style={styles.text1}>W</Text>
+                </View>
+              <View style={styles.bannerFlexThree}>
+                <Text style={styles.text1}>D</Text>
+              </View>
+            <View style={styles.bannerFlexThree}>
+              <Text style={styles.text1}>L</Text>
+            </View>
           <View style={styles.bannerFlexThree}>
             <Text style={styles.text1}>P</Text>
           </View>
@@ -132,6 +134,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "row"
+  },
+  leaguetext: {
+    color: "white",
+    left: 12,
+    top: 3
   },
   containerOne: {
     width: 30,
@@ -190,6 +197,14 @@ const styles = StyleSheet.create({
   },
   leagueContainer: {
     height: 26,
-    backgroundColor: "black"
-  }
+    backgroundColor: "black",
+    flex: 1,
+    flexDirection: "row"
+  },
+  flag: {
+    width: 26,
+    height: 16,
+    top: 5,
+    left: 5
+  },
 });

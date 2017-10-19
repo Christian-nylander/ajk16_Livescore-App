@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   },
   all: {
     color: "white",
-    fontSize: 15,
+    fontSize: 14,
     top: -4
   },
   score1: {

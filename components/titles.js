@@ -51,10 +51,9 @@ export default class Titles extends Component {
     let {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-        {/* <TopBanner /> */}
-        {/* <DatePicker />
-        <LeagueOne navigate={navigate} matches={this.state.matches} /> */}
-        <Table />
+         <TopBanner />
+         <DatePicker />
+        <LeagueOne navigate={navigate} matches={this.state.matches} />
       </ScrollView>
     );
   }

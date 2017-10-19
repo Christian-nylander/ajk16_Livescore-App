@@ -9,7 +9,20 @@ export default class LegaueOne extends Component {
 
 
   static navigationOptions = {
-    title: 'Livescore App'
+  title: 'Live Score App',
+  headerTintColor: '#FFFFFF',
+  headerStyle: {
+  backgroundColor: 'rgb(47, 54, 61)',
+  borderBottomColor: 'gray',
+  borderBottomWidth: 1,
+  height: 80,
+  },
+  headerTitleStyle: {
+  fontSize: 18,
+  top:10,
+  alignSelf: 'center',
+  fontWeight: '300',
+  }
   };
 
 

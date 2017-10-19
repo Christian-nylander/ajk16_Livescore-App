@@ -37,12 +37,14 @@ export default class Titles extends Component {
   title: 'Live Score App',
   headerTintColor: '#FFFFFF',
   headerStyle: {
-  backgroundColor: '#141414',
-  borderBottomColor: 'gray',
-  borderBottomWidth: 1,
+  backgroundColor: 'rgb(47, 54, 61)',
+  height: 80,
   },
   headerTitleStyle: {
   fontSize: 18,
+  top:10,
+  alignSelf: 'center',
+  fontWeight: '300',
   }
   };
 
@@ -51,7 +53,6 @@ export default class Titles extends Component {
     let {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-         <TopBanner />
          <DatePicker />
         <LeagueOne navigate={navigate} matches={this.state.matches} />
       </ScrollView>

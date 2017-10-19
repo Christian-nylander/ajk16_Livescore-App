@@ -30,7 +30,7 @@ export default class renderLeagueOne extends Component {
               </View>
             </View>
             <View style={styles.boxTwo}>
-              <TouchableHighlight onPress={() => navigate("About", {homeTeamName: item.homeTeamName, awayTeamName: item.awayTeamName, homeLink: item._links.homeTeam.href, awayLink: item._links.awayTeam.href})}>
+              <TouchableHighlight onPress={() => navigate("About", {homeTeamName: item.homeTeamName, awayTeamName: item.awayTeamName, homeLink: item._links.homeTeam.href, awayLink: item._links.awayTeam.href, competition: item._links.competition.href, navigate: navigate})}>
                 <Image
                   style={styles.infoImage}
                   source={require('../img/Untitled-3.png')}

@@ -56,9 +56,10 @@ export default class About extends Component {
 
   render() {
     let {params} = this.props.navigation.state;
+    let navigate = params.navigate;
     let homeTeamMatches = this.state.homeTeamMatches;
     homeTeamMatches = homeTeamMatches.filter((item) => {
-      return item.status === "FINISHED";
+      return item.status === "FINISHED" && item._links.competition.href === params.competition;
     });
     homeTeamMatches = homeTeamMatches.slice(-4);
     let homeTeamForm = homeTeamMatches.map((item) => {
@@ -97,7 +98,7 @@ export default class About extends Component {
     });
     let awayTeamMatches = this.state.awayTeamMatches;
     awayTeamMatches = awayTeamMatches.filter((item) => {
-      return item.status === "FINISHED";
+      return item.status === "FINISHED" && item._links.competition.href === params.competition;
     });
     awayTeamMatches = awayTeamMatches.slice(-4);
     let awayTeamForm = awayTeamMatches.map((item) => {
@@ -164,7 +165,7 @@ export default class About extends Component {
                 {awayTeamImage}
             </View>
           </Image>
-          <AboutInfo teams={this.state.teams} params={params} homeTeamForm={homeTeamForm} awayTeamForm={awayTeamForm}/>
+          <AboutInfo teams={this.state.teams} params={params} homeTeamForm={homeTeamForm} awayTeamForm={awayTeamForm} navigate={navigate}/>
         </View>
       </View>
 

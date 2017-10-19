@@ -12,7 +12,7 @@ export default class Table extends Component {
     this.state = {
       table: []
     }
-  }rr
+  }
 
    componentDidMount = () => {
     fetch('http://api.football-data.org/v1/competitions/445/leagueTable', {
@@ -37,7 +37,7 @@ export default class Table extends Component {
       if(count === true){
         count = false;
       return(
-        <View style={styles.container}>
+        <View key={item.position} style={styles.container}>
           <View style={styles.containerOne}>
             <Text style={styles.text}>{item.position}</Text>
           </View>
@@ -66,7 +66,7 @@ export default class Table extends Component {
     else {
       count = true;
       return(
-        <View style={styles.container}>
+        <View key={item.position} style={styles.container}>
           <View style={styles.containerOne2}>
             <Text style={styles.text}>{item.position}</Text>
           </View>

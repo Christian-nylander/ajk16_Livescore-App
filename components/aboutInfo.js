@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image } from 'react-native';
+import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image, TouchableHighlight } from 'react-native';
 import { Constants } from 'expo';
 import Button from 'react-native-button';
 import TopBanner from './topBanner';
 export default class AboutInfo extends Component {
   render() {
+    let navigate = this.props.navigate;
     let homeTeamArena = this.props.teams.map((item) => {
       if(this.props.params.homeTeamName === item.name) {
         return(
@@ -32,10 +33,12 @@ export default class AboutInfo extends Component {
           <Image style={styles.img} source={require('../img/icon.png')} />
           {homeTeamArena}
         </View>
-        <View style={styles.secondContainer}>
-          <Image style={styles.img} source={require('../img/trophy.png')} />
-          <Text style={styles.text}>Premier League</Text>
-        </View>
+        <TouchableHighlight onPress={() => navigate("Table")}>
+          <View style={styles.secondContainer}>
+            <Image style={styles.img} source={require('../img/trophy.png')} />
+            <Text style={styles.text}>Premier League</Text>
+          </View>
+        </TouchableHighlight>
         <View style={styles.thirdContainer}>
           <Text style={styles.text2}>Manager</Text>
           <View style={styles.managerContainer}>

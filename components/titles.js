@@ -8,7 +8,9 @@ import TopBanner from './topBanner';
 import DatePicker from './datePicker';
 import LeagueOne from './leagueOne';
 import LeagueTwo from './leagueTwo';
-import About from './about.js'
+import About from './about';
+import Table from './table';
+
 export default class Titles extends Component {
   constructor() {
     super();
@@ -49,9 +51,10 @@ export default class Titles extends Component {
     let {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-        <TopBanner />
-        <DatePicker />
-        <LeagueOne navigate={navigate} matches={this.state.matches} />
+        {/* <TopBanner /> */}
+        {/* <DatePicker />
+        <LeagueOne navigate={navigate} matches={this.state.matches} /> */}
+        <Table />
       </ScrollView>
     );
   }

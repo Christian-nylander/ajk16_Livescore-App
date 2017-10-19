@@ -48,7 +48,7 @@ export default class About extends Component {
         <View style={styles.upperContainer}>
           <Image
             style={styles.landing}
-            source={require('../img/aa.jpg')}>
+            source={require('../img/aaaaa.jpg')}>
             <View style={styles.info}>
                 <Image style={styles.img} source={require('../img/580b57fcd9996e24bc43c4e7.png')} />
                 <View style={styles.infoOrder}>

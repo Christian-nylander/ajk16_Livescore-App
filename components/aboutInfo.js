@@ -48,17 +48,11 @@ export default class AboutInfo extends Component {
           <Text style={styles.text2}>Form</Text>
           <View style={styles.winContainer}>
               <View style={styles.streaks}>
-                <Image style={styles.img3} source={require('../img/winner.png')} />
-                <Image style={styles.img3} source={require('../img/winner.png')} />
-                <Image style={styles.img3} source={require('../img/lose.png')} />
-                <Image style={styles.img3} source={require('../img/draw.png')} />
+                {this.props.homeTeamForm}
               </View>
             <Image style={styles.imgStats} source={require('../img/bar-chart.png')} />
             <View style={styles.streaks}>
-              <Image style={styles.img3} source={require('../img/winner.png')} />
-              <Image style={styles.img3} source={require('../img/winner.png')} />
-              <Image style={styles.img3} source={require('../img/lose.png')} />
-              <Image style={styles.img3} source={require('../img/draw.png')} />
+              {this.props.awayTeamForm}
             </View>
           </View>
         </View>

@@ -22,7 +22,7 @@ export default class datePicker extends Component {
   };
 
   pressBack = (date) => {
-    console.log(date.format("YYYY-MM-DD")); 
+    console.log(date.format("YYYY-MM-DD"));
   }
 
   pressFront = () => {
@@ -36,25 +36,15 @@ export default class datePicker extends Component {
     return(
       <View>
         <CalendarStrip
-          highlightDateNumberStyle={{color: 'blue'}}
-          highlightDateNameStyle={{color: 'blue'}}
+          calendarHeaderStyle={{color: 'white'}}
+          highlightDateNumberStyle={{color: '#4BB543'}}
+          highlightDateNameStyle={{color: '#4BB543'}}
           startingDate={now}
           selectedDate={now}
+          dateNumberStyle={{color: 'white'}}
+          dateNameStyle={{color: 'white'}}
           onDateSelected={this.pressBack}
          />
-        {/*<TouchableHighlight onPress={this.pressBack}>
-          <Image
-            style={styles.arrow}
-            source={require('../img/chevron-sign-left.png')}
-          />
-            </TouchableHighlight>
-              <Text style={styles.dateText}>{this.state.time}</Text>
-            <TouchableHighlight onPress={this.pressFront}>
-          <Image
-            style={styles.arrow}
-            source={require('../img/chevron-sign-to-right.png')}
-          />
-        </TouchableHighlight>*/}
       </View>
     );
   }

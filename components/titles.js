@@ -37,7 +37,7 @@ export default class Titles extends Component {
   title: 'Live Score App',
   headerTintColor: '#FFFFFF',
   headerStyle: {
-  backgroundColor: 'rgb(47, 54, 61)',
+  backgroundColor: '#1f272d',
   height: 80,
   },
   headerTitleStyle: {
@@ -66,6 +66,6 @@ const styles = StyleSheet.create({
     //alignItems: 'center',
     // justifyContent: 'center',
     // paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#fff',
+    backgroundColor: "rgb(47, 54, 61);"
   },
 });

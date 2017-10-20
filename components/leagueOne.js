@@ -48,7 +48,7 @@ export default class LegaueOne extends Component {
 const styles = StyleSheet.create({
   banner: {
     height: 26,
-    backgroundColor: "#333333",
+    backgroundColor: "#1f272d",
     flex: 1,
     flexDirection: 'row',
     justifyContent: "space-between"

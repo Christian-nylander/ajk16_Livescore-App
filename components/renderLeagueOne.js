@@ -34,7 +34,7 @@ export default class renderLeagueOne extends Component {
               <TouchableHighlight onPress={() => navigate("About", {homeTeamName: item.homeTeamName, awayTeamName: item.awayTeamName, homeLink: item._links.homeTeam.href, awayLink: item._links.awayTeam.href, competition: item._links.competition.href, navigate: navigate})}>
                 <Image
                   style={styles.infoImage}
-                  source={require('../img/Untitled-3.png')}
+                  source={require('../img/banners.png')}
                 />
               </TouchableHighlight>
             </View>
@@ -50,8 +50,8 @@ export default class renderLeagueOne extends Component {
 
 const styles = StyleSheet.create({
   matchConatiner1: {
-    height: 70,
-    backgroundColor: "#141414",
+    height: 60,
+    backgroundColor: "#2d3033",
     flex: 1,
     flexDirection: 'row',
     justifyContent: "space-between",
@@ -84,13 +84,11 @@ const styles = StyleSheet.create({
     width: 50
   },
   infoImage: {
-    width: 200,
-    height: 90,
-    top: -10
+    height: 59
   },
   all: {
     color: "white",
-    fontSize: 14,
+    fontSize: 13,
     top: -4
   },
   score1: {

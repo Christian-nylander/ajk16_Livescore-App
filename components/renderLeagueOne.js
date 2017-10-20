@@ -6,30 +6,43 @@ import Button from 'react-native-button';
 
 export default class renderLeagueOne extends Component {
   render() {
+    let date = this.props.date;
     let navigate = this.props.navigate;
     let matches = this.props.matches
     let matchData = matches.map((item, index) => {
-      if(item.status === "FINISHED"){
-        let time = item.date.substring(11, 16);
-        let homeScore = item.result.goalsHomeTeam;
-        let awayScore = item.result.goalsAwayTeam;
-        if(homeScore === null) {
-          homeScore = 0;
-          awayScore = 0;
-        }
-        return(
-          <View key={index} style={styles.matchConatiner1}>
-            <View style={styles.boxOne}>
-              <Text style={styles.minute}>{time}</Text>
-              <View style={{width: 160}}>
-                  <Text style={styles.team, styles.all}>{item.homeTeamName}</Text>
-                  <Text style={styles.team, styles.all}>{item.awayTeamName}</Text>
+      if(item.status === "TIMED" || item.status === "SCHEDULED"){
+        let matchDate = item.date.substring(0, 10);
+        if(matchDate === date){
+          let time = item.date.substring(11, 16);
+          let homeScore = item.result.goalsHomeTeam;
+          let awayScore = item.result.goalsAwayTeam;
+          if(homeScore === null) {
+            homeScore = 0;
+            awayScore = 0;
+          }
+          return(
+            <View key={index} style={styles.matchConatiner1}>
+              <View style={styles.boxOne}>
+                <Text style={styles.minute}>{time}</Text>
+                <View style={{width: 160}}>
+                    <Text style={styles.team, styles.all}>{item.homeTeamName}</Text>
+                    <Text style={styles.team, styles.all}>{item.awayTeamName}</Text>
+                </View>
+                <View style={styles.score}>
+                    <Text style={styles.score, styles.all}>{homeScore}</Text>
+                    <Text style={styles.score, styles.all}>{awayScore}</Text>
+                </View>
               </View>
-              <View style={styles.score}>
-                  <Text style={styles.score, styles.all}>{homeScore}</Text>
-                  <Text style={styles.score, styles.all}>{awayScore}</Text>
+              <View style={styles.boxTwo}>
+                <TouchableHighlight onPress={() => navigate("About", {homeTeamName: item.homeTeamName, awayTeamName: item.awayTeamName, homeLink: item._links.homeTeam.href, awayLink: item._links.awayTeam.href, competition: item._links.competition.href, navigate: navigate})}>
+                  <Image
+                    style={styles.infoImage}
+                    source={require('../img/Untitled-3.png')}
+                  />
+                </TouchableHighlight>
               </View>
             </View>
+<<<<<<< HEAD
             <View style={styles.boxTwo}>
               <TouchableHighlight onPress={() => navigate("About", {homeTeamName: item.homeTeamName, awayTeamName: item.awayTeamName, homeLink: item._links.homeTeam.href, awayLink: item._links.awayTeam.href, competition: item._links.competition.href, navigate: navigate})}>
                 <Image
@@ -40,6 +53,10 @@ export default class renderLeagueOne extends Component {
             </View>
           </View>
         );
+=======
+          );
+        }
+>>>>>>> 3e62b593f3a027917439671af3f0c98f75bc1ce2
       }
     });
     return(

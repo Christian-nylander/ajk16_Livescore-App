@@ -2,44 +2,47 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image, TouchableHighlight } from 'react-native';
 import { Constants } from 'expo';
 import moment from 'moment';
-var now = moment().format();
+import CalendarStrip from 'react-native-calendar-strip';
+let now = moment();
 
-let count = 0;
-let count1 = 0;
-let startdate;
-let date = moment(new Date()).format("YYYY-MM-DD")
+// let count = 0;
+// let count1 = 0;
+// let date = moment(new Date()).format("YYYY-MM-DD")
 
 export default class datePicker extends Component {
   constructor() {
     super();
-    this.state = {
-      time: date
-    }
+    // this.state = {
+    //   time: date
+    // }
   }
 
   static navigationOptions = {
     title: 'Livescore App'
   };
 
-  pressBack= () => {
-    count = this.state.time;
-    this.setState({
-      time: moment().subtract(count, "days").format("YYYY-MM-DD")
-    })
+  pressBack = (date) => {
+    console.log(date.format("YYYY-MM-DD")); 
   }
 
-  pressFront= () => {
-    count =
-    this.setState({
-      time: moment().add(count1, "days").format("YYYY-MM-DD")
-    })
+  pressFront = () => {
+    // this.setState({
+    //   time: moment().add(count, "days").format("YYYY-MM-DD")
+    // })
   }
 
   render(){
-
+    console.log(now);
     return(
-      <View style={styles.dateContainer}>
-        <TouchableHighlight onPress={this.pressBack}>
+      <View>
+        <CalendarStrip
+          highlightDateNumberStyle={{color: 'blue'}}
+          highlightDateNameStyle={{color: 'blue'}}
+          startingDate={now}
+          selectedDate={now}
+          onDateSelected={this.pressBack}
+         />
+        {/*<TouchableHighlight onPress={this.pressBack}>
           <Image
             style={styles.arrow}
             source={require('../img/chevron-sign-left.png')}
@@ -51,7 +54,7 @@ export default class datePicker extends Component {
             style={styles.arrow}
             source={require('../img/chevron-sign-to-right.png')}
           />
-        </TouchableHighlight>
+        </TouchableHighlight>*/}
       </View>
     );
   }

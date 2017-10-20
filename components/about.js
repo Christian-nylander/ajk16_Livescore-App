@@ -24,7 +24,6 @@ export default class About extends Component {
     fetch('https://raw.githubusercontent.com/eriksvedenlund/teamData/master/teams.json')
       .then((response) => response.json())
       .then((response) => {
-        console.log("response");
         this.setState({
           teams: response.teams
         });

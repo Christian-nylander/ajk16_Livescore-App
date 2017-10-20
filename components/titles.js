@@ -66,6 +66,6 @@ const styles = StyleSheet.create({
     //alignItems: 'center',
     // justifyContent: 'center',
     // paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#141414',
+    backgroundColor: '#fff',
   },
 });

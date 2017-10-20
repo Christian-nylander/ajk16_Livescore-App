@@ -16,10 +16,13 @@ export default class datePicker extends Component {
   render(){
     return(
       <View>
-        <CalendarStrip
-          highlightDateNumberStyle={{color: 'blue'}}
-          highlightDateNameStyle={{color: 'blue'}}
-          onDateSelected={this.pickDate}
+          <CalendarStrip
+            calendarHeaderStyle={{color: 'white'}}
+            highlightDateNumberStyle={{color: '#4BB543'}}
+            highlightDateNameStyle={{color: '#4BB543'}}
+            dateNumberStyle={{color: 'white'}}
+            dateNameStyle={{color: 'white'}}
+            onDateSelected={this.pickDate}
          />
       </View>
     );

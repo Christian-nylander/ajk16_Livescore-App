@@ -42,24 +42,11 @@ export default class renderLeagueOne extends Component {
                 </TouchableHighlight>
               </View>
             </View>
-<<<<<<< HEAD
-            <View style={styles.boxTwo}>
-              <TouchableHighlight onPress={() => navigate("About", {homeTeamName: item.homeTeamName, awayTeamName: item.awayTeamName, homeLink: item._links.homeTeam.href, awayLink: item._links.awayTeam.href, competition: item._links.competition.href, navigate: navigate})}>
-                <Image
-                  style={styles.infoImage}
-                  source={require('../img/banners.png')}
-                />
-              </TouchableHighlight>
-            </View>
-          </View>
-        );
-=======
           );
         }
->>>>>>> 3e62b593f3a027917439671af3f0c98f75bc1ce2
       }
     });
-    return(
+    return (
       <View>{matchData}</View>
     );
   }

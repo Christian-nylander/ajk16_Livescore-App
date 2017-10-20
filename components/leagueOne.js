@@ -39,7 +39,7 @@ export default class LegaueOne extends Component {
           </View>
           <Text style={styles.leagueDate}>18 May</Text>
         </View>
-        <RenderLeagueOne navigate={this.props.navigate} matches={this.props.matches} />
+        <RenderLeagueOne navigate={this.props.navigate} matches={this.props.matches} date={this.props.date}/>
       </View>
     );
   }

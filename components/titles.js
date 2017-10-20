@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView } from 'react-native';
 import { Constants } from 'expo';
 import Button from 'react-native-button';
+import moment from 'moment';
 
 //Components
 import TopBanner from './topBanner';
@@ -15,7 +16,8 @@ export default class Titles extends Component {
   constructor() {
     super();
     this.state = {
-      matches: []
+      matches: [],
+      date : moment().format("YYYY-MM-DD")
     }
   }
 
@@ -31,6 +33,12 @@ export default class Titles extends Component {
           matches: response.fixtures
         });
       })
+  }
+
+  setDate = (date) => {
+    this.setState({
+      date: date
+    });
   }
 
   static navigationOptions = {
@@ -53,8 +61,8 @@ export default class Titles extends Component {
     let {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-         <DatePicker />
-        <LeagueOne navigate={navigate} matches={this.state.matches} />
+         <DatePicker setDate={this.setDate}/>
+        <LeagueOne navigate={navigate} matches={this.state.matches} date={this.state.date}/>
       </ScrollView>
     );
   }

@@ -22,18 +22,16 @@ export default class datePicker extends Component {
   };
 
   pressBack= () => {
-    count++
-    startdate = moment().subtract(count, "days").format("YYYY-MM-DD");
+    count = this.state.time;
     this.setState({
-      time: startdate
+      time: moment().subtract(count, "days").format("YYYY-MM-DD")
     })
   }
 
   pressFront= () => {
-    count1++
-    startdate = moment().add(count, "days").format("YYYY-MM-DD");
+    count =
     this.setState({
-      time: startdate
+      time: moment().add(count1, "days").format("YYYY-MM-DD")
     })
   }
 
@@ -42,17 +40,17 @@ export default class datePicker extends Component {
     return(
       <View style={styles.dateContainer}>
         <TouchableHighlight onPress={this.pressBack}>
-        <Image
-          style={styles.arrow}
-          source={require('../img/chevron-sign-left.png')}
-        />
-        </TouchableHighlight>
-        <Text style={styles.dateText}>{this.state.time}</Text>
-        <TouchableHighlight onPress={this.pressFront}>
-        <Image
-          style={styles.arrow}
-          source={require('../img/chevron-sign-to-right.png')}
-        />
+          <Image
+            style={styles.arrow}
+            source={require('../img/chevron-sign-left.png')}
+          />
+            </TouchableHighlight>
+              <Text style={styles.dateText}>{this.state.time}</Text>
+            <TouchableHighlight onPress={this.pressFront}>
+          <Image
+            style={styles.arrow}
+            source={require('../img/chevron-sign-to-right.png')}
+          />
         </TouchableHighlight>
       </View>
     );
@@ -75,4 +73,4 @@ const styles = StyleSheet.create({
   arrow: {
     top: 16
   },
-});   
+});

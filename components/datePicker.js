@@ -1,18 +1,59 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image, TouchableHighlight } from 'react-native';
 import { Constants } from 'expo';
+import moment from 'moment';
+var now = moment().format();
 
-
+let count = 0;
+let count1 = 0;
+let startdate;
+let date = moment(new Date()).format("YYYY-MM-DD")
 
 export default class datePicker extends Component {
+  constructor() {
+    super();
+    this.state = {
+      time: date
+    }
+  }
+
   static navigationOptions = {
     title: 'Livescore App'
   };
 
+  pressBack= () => {
+    count++
+    startdate = moment().subtract(count, "days").format("YYYY-MM-DD");
+    this.setState({
+      time: startdate
+    })
+  }
+
+  pressFront= () => {
+    count1++
+    startdate = moment().add(count, "days").format("YYYY-MM-DD");
+    this.setState({
+      time: startdate
+    })
+  }
+
   render(){
+
     return(
       <View style={styles.dateContainer}>
-        <Text style={styles.dateText}>May 18 2017</Text>
+        <TouchableHighlight onPress={this.pressBack}>
+        <Image
+          style={styles.arrow}
+          source={require('../img/chevron-sign-left.png')}
+        />
+        </TouchableHighlight>
+        <Text style={styles.dateText}>{this.state.time}</Text>
+        <TouchableHighlight onPress={this.pressFront}>
+        <Image
+          style={styles.arrow}
+          source={require('../img/chevron-sign-to-right.png')}
+        />
+        </TouchableHighlight>
       </View>
     );
   }
@@ -20,13 +61,18 @@ export default class datePicker extends Component {
 
 const styles = StyleSheet.create({
   dateContainer: {
-    height: 30,
+    height: 60,
     backgroundColor: "#1d1d1d",
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-around"
   },
   dateText: {
     color: "white",
-    textAlign: "center",
-    fontSize: 17,
-    top: 4
-  }
-});
+    fontSize: 20,
+    top: 14
+  },
+  arrow: {
+    top: 16
+  },
+});   

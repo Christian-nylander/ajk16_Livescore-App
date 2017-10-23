@@ -5,6 +5,7 @@ import Button from 'react-native-button';
 
 import TopBanner from './topBanner';
 let count = true;
+const left= "50%";
 
 export default class Table extends Component {
   constructor(){
@@ -29,7 +30,20 @@ export default class Table extends Component {
   }
 
   static navigationOptions = {
-    title: 'Table'
+  title: 'Table',
+  headerTintColor: '#FFFFFF',
+  headerStyle: {
+  backgroundColor: 'rgb(47, 54, 61)',
+  borderBottomColor: 'gray',
+  borderBottomWidth: 1,
+  height: 80,
+  },
+  headerTitleStyle: {
+  fontSize: 18,
+  left: 90,
+  fontWeight: '300',
+  top: 10
+  }
   };
 
   render() {

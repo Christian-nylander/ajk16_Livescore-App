@@ -8,9 +8,8 @@ export default class renderLeagueOne extends Component {
   render() {
     let date = this.props.date;
     let navigate = this.props.navigate;
-    let matches = this.props.matches
+    let matches = this.props.matches;
     let matchData = matches.map((item, index) => {
-      if(item.status === "TIMED" || item.status === "SCHEDULED"){
         let matchDate = item.date.substring(0, 10);
         if(matchDate === date){
           let time = item.date.substring(11, 16);
@@ -34,7 +33,7 @@ export default class renderLeagueOne extends Component {
                 </View>
               </View>
               <View style={styles.boxTwo}>
-                <TouchableHighlight onPress={() => navigate("About", {homeTeamName: item.homeTeamName, awayTeamName: item.awayTeamName, homeLink: item._links.homeTeam.href, awayLink: item._links.awayTeam.href, competition: item._links.competition.href, navigate: navigate})}>
+                <TouchableHighlight onPress={() => navigate("About", {homeTeamName: item.homeTeamName, awayTeamName: item.awayTeamName, homeLink: item._links.homeTeam.href, awayLink: item._links.awayTeam.href, competition: item._links.competition.href, navigate: navigate, date: date, time: time})}>
                   <Image
                     style={styles.infoImage}
                     source={require('../img/Untitled-3.png')}
@@ -44,13 +43,22 @@ export default class renderLeagueOne extends Component {
             </View>
           );
         }
-      }
     });
     return (
       <View>{matchData}</View>
     );
   }
 }
+    // if(matchData[0] === undefined){
+    //   return(
+    //     <View style={styles.matchConatiner1}>
+    //       <Text>NO MATCH BOI</Text>
+    //     </View>
+    //   );
+    // }
+    // else{
+
+    // }
 
 const styles = StyleSheet.create({
   matchConatiner1: {

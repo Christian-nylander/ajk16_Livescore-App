@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image } from 'react-native';
 import { Constants } from 'expo';
+import moment from 'moment';
 
 //Components
 import RenderLeagueOne from './renderLeagueOne';
@@ -25,8 +26,8 @@ export default class LegaueOne extends Component {
   }
   };
 
-
   render() {
+    let date = moment(this.props.date).format('MMM D');
     return (
       <View>
         <View style={styles.banner}>
@@ -37,7 +38,7 @@ export default class LegaueOne extends Component {
             />
             <Text style={styles.leagueText}>Premier League</Text>
           </View>
-          <Text style={styles.leagueDate}>18 May</Text>
+          <Text style={styles.leagueDate}>{date}</Text>
         </View>
         <RenderLeagueOne navigate={this.props.navigate} matches={this.props.matches} date={this.props.date}/>
       </View>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image } from 'react-native';
 import { Constants } from 'expo';
 import Button from 'react-native-button';
+import moment from 'moment';
 
 import TopBanner from './topBanner';
 import AboutInfo from './aboutInfo'
@@ -27,7 +28,9 @@ export default class About extends Component {
         this.setState({
           teams: response.teams
         });
-      });
+      }).catch((error) => {
+        console.log(error.message);
+      })
 
     fetch(params.homeLink + '/fixtures', {
       headers: {
@@ -39,7 +42,9 @@ export default class About extends Component {
         this.setState({
           homeTeamMatches: response.fixtures
         });
-      });
+      }).catch((error) => {
+        console.log(error.message);
+      })
 
     fetch(params.awayLink + '/fixtures', {
       headers: {
@@ -51,6 +56,8 @@ export default class About extends Component {
         this.setState({
           awayTeamMatches: response.fixtures
         });
+      }).catch((error) => {
+        console.log(error.message);
       })
   }
 
@@ -149,6 +156,8 @@ export default class About extends Component {
         );
       }
     });
+    let date = moment(params.date).format('D MMM YYYY');
+    let day = moment(params.date).format('dddd').toUpperCase();
     return(
       <View style={styles.grogg}>
         <View style={styles.upperContainer}>
@@ -158,9 +167,9 @@ export default class About extends Component {
             <View style={styles.info}>
                 {homeTeamImage}
                 <View style={styles.infoOrder}>
-                  <Text style={styles.text1}>THURSDAY</Text>
-                  <Text style={styles.text2}>18 MAY 2017</Text>
-                  <Text style={styles.text2}>19:00</Text>
+                  <Text style={styles.text1}>{day}</Text>
+                  <Text style={styles.text2}>{date}</Text>
+                  <Text style={styles.text2}>{params.time}</Text>
                 </View>
                 {awayTeamImage}
             </View>

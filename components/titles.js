@@ -32,6 +32,10 @@ export default class Titles extends Component {
         this.setState({
           matches: response.fixtures
         });
+        this.update();
+      }).catch((error) => {
+        console.log(error.message);
+        this.update();
       })
   }
 
@@ -39,6 +43,24 @@ export default class Titles extends Component {
     this.setState({
       date: date
     });
+  }
+
+  update = () => {
+    setInterval(() => {
+    fetch('http://api.football-data.org/v1/competitions/445/fixtures', {
+      headers: {
+        'X-Auth-Token': 'cf642110fe7d494e9b8852f4f338f6de'
+      }
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        this.setState({
+          matches: response.fixtures
+        });
+      }).catch((error) => {
+        console.log(error.message);
+      })
+    }, 10000);
   }
 
   static navigationOptions = {
@@ -61,7 +83,7 @@ export default class Titles extends Component {
     let {navigate} = this.props.navigation;
     return (
       <ScrollView style={styles.container}>
-         <DatePicker setDate={this.setDate}/>
+        <DatePicker setDate={this.setDate}/>
         <LeagueOne navigate={navigate} matches={this.state.matches} date={this.state.date}/>
       </ScrollView>
     );

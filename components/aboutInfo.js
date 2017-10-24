@@ -41,9 +41,9 @@ export default class AboutInfo extends Component {
         </TouchableHighlight>
         <View style={styles.thirdContainer}>
           <Text style={styles.text2}>Manager</Text>
+          <Image style={styles.img2} source={require('../img/user.png')} />
           <View style={styles.managerContainer}>
             {homeTeamManager}
-              <Image style={styles.img2} source={require('../img/user.png')} />
             {awayTeamManager}
           </View>
         </View>
@@ -72,30 +72,30 @@ const styles = StyleSheet.create({
   },
   firstContainer: {
     width: 300,
-    height: 70,
+    height: 60,
     borderBottomColor: '#bbb',
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
   secondContainer: {
     width: 300,
-    height: 70,
+    height: 60,
     borderBottomColor: '#bbb',
     borderBottomWidth: StyleSheet.hairlineWidth
   },
   thirdContainer: {
     width: 300,
-    height: 70,
+    height: 60,
     borderBottomColor: '#bbb',
-    borderBottomWidth: StyleSheet.hairlineWidth
+    borderBottomWidth: StyleSheet.hairlineWidth,
   },
   fourthContainer: {
     width: 300,
-    height: 70,
+    height: 60,
     borderBottomColor: '#bbb',
     borderBottomWidth: StyleSheet.hairlineWidth
   },
   img: {
-    top: 20
+    top: 14
   },
   text: {
     color: "white",
@@ -116,13 +116,16 @@ const styles = StyleSheet.create({
   managerContainer: {
     flex: 1,
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    top: -20
   },
   img2: {
     width: 22,
     height: 22,
-    top: 10,
-    left: -6
+    alignItems: "center",
+    left: 138,
+    top: 5
+
   },
   winContainer: {
     flex: 1,

@@ -11,6 +11,24 @@ const width = '72%';
 const height = '40%';
 
 export default class About extends Component {
+
+  static navigationOptions = {
+  title: 'Match Info',
+  headerTintColor: '#FFFFFF',
+  headerStyle: {
+  backgroundColor: 'rgb(47, 54, 61)',
+  borderBottomColor: 'gray',
+  borderBottomWidth: 1,
+  height: 80,
+  },
+  headerTitleStyle: {
+  fontSize: 18,
+  left: 70,
+  fontWeight: '300',
+  top: 10
+  }
+  };
+
   constructor() {
     super();
     this.state = {
@@ -159,11 +177,11 @@ export default class About extends Component {
     let date = moment(params.date).format('D MMM YYYY');
     let day = moment(params.date).format('dddd').toUpperCase();
     return(
-      <View style={styles.grogg}>
+      <View style={styles.background}>
         <View style={styles.upperContainer}>
           <Image
             style={styles.landing}
-            source={require('../img/aaaaa.jpg')}>
+            source={require('../img/go.jpg')}>
             <View style={styles.info}>
                 {homeTeamImage}
                 <View style={styles.infoOrder}>
@@ -183,9 +201,9 @@ export default class About extends Component {
 }
 
 const styles = StyleSheet.create({
-  grogg: {
+  background: {
     flex: 1,
-    backgroundColor: "#141414"
+    backgroundColor: "rgb(47, 54, 61);"
   },
   landing: {
     height: 220

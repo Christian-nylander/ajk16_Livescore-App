@@ -5,6 +5,8 @@ import Button from 'react-native-button';
 
 import TopBanner from './topBanner';
 let count = true;
+const widthBig= "50%";
+const widthSmal = "8.3%";
 
 export default class Table extends Component {
   constructor(){
@@ -29,7 +31,20 @@ export default class Table extends Component {
   }
 
   static navigationOptions = {
-    title: 'Table'
+  title: 'Table',
+  headerTintColor: '#FFFFFF',
+  headerStyle: {
+  backgroundColor: 'rgb(47, 54, 61)',
+  borderBottomColor: 'gray',
+  borderBottomWidth: 1,
+  height: 80,
+  },
+  headerTitleStyle: {
+  fontSize: 18,
+  left: 90,
+  fontWeight: '300',
+  top: 10
+  }
   };
 
   render() {
@@ -93,7 +108,8 @@ export default class Table extends Component {
     }
     });
     return(
-      <ScrollView>
+      <View style={{flex: 1}}>
+      <ScrollView style={{flex: 1}}>
         <View style={styles.leagueContainer}>
           <Image
             style={styles.flag}
@@ -126,6 +142,7 @@ export default class Table extends Component {
         </View>
         {tableData}
       </ScrollView>
+    </View>
     );
   }
 }
@@ -141,32 +158,32 @@ const styles = StyleSheet.create({
     top: 3
   },
   containerOne: {
-    width: 30,
+    width: widthSmal,
     height: 26,
     backgroundColor: "#1f1f1f",
   },
   containerTwo: {
-    width: 220,
+    width: widthBig,
     backgroundColor: "#282828",
     height: 26,
   },
   containerThree: {
-    width: 30,
+    width: widthSmal,
     backgroundColor: "#282828",
     height: 26,
   },
   containerOne2: {
-    width: 30,
+    width: widthSmal,
     height: 26,
     backgroundColor: "#1f1f1f",
   },
   containerTwo2: {
-    width: 220,
+    width: widthBig,
     backgroundColor: "#383838",
     height: 26,
   },
   containerThree2: {
-    width: 30,
+    width: widthSmal,
     backgroundColor: "#383838",
     height: 26,
   },
@@ -181,17 +198,17 @@ const styles = StyleSheet.create({
     left: 10
   },
   bannerFlexOne: {
-    width: 30,
+    width: widthSmal,
     height: 26,
     backgroundColor: "#171717",
   },
   bannerFlexTwo: {
-    width: 220,
+    width: widthBig,
     height: 26,
     backgroundColor: "#171717",
   },
   bannerFlexThree: {
-    width: 30,
+    width: widthSmal,
     backgroundColor: "#171717",
     height: 26,
   },

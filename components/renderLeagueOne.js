@@ -13,6 +13,7 @@ export default class renderLeagueOne extends Component {
     let matchData = matches.map((item, index) => {
         let matchDate = item.date.substring(0, 10);
         if(matchDate === date){
+          matchHit++;
           let localTime = moment(item.date).local().format();
           let time = localTime.substring(11, 16);
           let homeScore = item.result.goalsHomeTeam;
@@ -54,9 +55,25 @@ export default class renderLeagueOne extends Component {
           );
         }
     });
-    return (
+    if(matchHit > 0){
+  matchHit = 0;
+  return (
+    <View>
       <View>{matchData}</View>
-    );
+    </View>
+  );
+}
+else {
+matchHit = 0;
+return(
+  <View style={styles.imgPosition}>
+    <Image
+      style={styles.noGames}
+      source={require('../img/nomages.png')}
+    />
+  </View>
+  );
+}
   }
 }
 

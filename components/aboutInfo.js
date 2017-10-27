@@ -3,6 +3,9 @@ import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollVi
 import { Constants } from 'expo';
 import Button from 'react-native-button';
 import TopBanner from './topBanner';
+
+const center = '50%';
+
 export default class AboutInfo extends Component {
   render() {
     let navigate = this.props.navigate;
@@ -51,10 +54,20 @@ export default class AboutInfo extends Component {
           <Text style={styles.text2}>Form</Text>
           <View style={styles.winContainer}>
               <View style={styles.streaks}>
+                {this.props.animating2 && 
+                  <ActivityIndicator
+                    size="large"
+                  />
+                }
                 {this.props.homeTeamForm}
               </View>
             <Image style={styles.imgStats} source={require('../img/bar-chart.png')} />
             <View style={styles.streaks}>
+              {this.props.animating3 && 
+                  <ActivityIndicator
+                    size="large"
+                  />
+              }
               {this.props.awayTeamForm}
             </View>
           </View>

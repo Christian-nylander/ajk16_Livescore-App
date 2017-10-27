@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image, TouchableHighlight} from 'react-native';
 import { Constants } from 'expo';
 import Button from 'react-native-button';
+import moment from 'moment';
 
 
 export default class renderLeagueOne extends Component {
@@ -12,7 +13,8 @@ export default class renderLeagueOne extends Component {
     let matchData = matches.map((item, index) => {
         let matchDate = item.date.substring(0, 10);
         if(matchDate === date){
-          let time = item.date.substring(11, 16);
+          let localTime = moment(item.date).local().format();
+          let time = localTime.substring(11, 16);
           let homeScore = item.result.goalsHomeTeam;
           let awayScore = item.result.goalsAwayTeam;
           if(homeScore === null) {
@@ -28,8 +30,16 @@ export default class renderLeagueOne extends Component {
                     <Text style={styles.team, styles.all}>{item.awayTeamName}</Text>
                 </View>
                 <View style={styles.score}>
-                    <Text style={styles.score, styles.all}>{homeScore}</Text>
-                    <Text style={styles.score, styles.all}>{awayScore}</Text>
+                  {homeScore > awayScore ? (
+                      <Text style={styles.score, styles.all, {color: '#4BB543'}}>{homeScore}</Text>
+                    ) : (
+                      <Text style={styles.score, styles.all}>{homeScore}</Text>
+                    )}
+                  {awayScore > homeScore ? (
+                      <Text style={styles.score, styles.all, {color: '#4BB543'}}>{awayScore}</Text>
+                    ) : (
+                      <Text style={styles.score, styles.all}>{awayScore}</Text>
+                    )}
                 </View>
               </View>
               <View style={styles.boxTwo}>

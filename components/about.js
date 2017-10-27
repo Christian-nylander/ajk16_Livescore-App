@@ -34,7 +34,10 @@ export default class About extends Component {
     this.state = {
       teams: [],
       homeTeamMatches: [],
-      awayTeamMatches: []
+      awayTeamMatches: [],
+      animating1: true,
+      animating2: true,
+      animating3: true
     }
   }
 
@@ -45,8 +48,13 @@ export default class About extends Component {
       .then((response) => {
         this.setState({
           teams: response.teams
-        });
-      }).catch((error) => {
+        })
+      }).then(() => {
+        this.setState({
+          animating1: false
+        })
+      })
+      .catch((error) => {
         console.log(error.message);
       })
 
@@ -59,8 +67,13 @@ export default class About extends Component {
       .then((response) => {
         this.setState({
           homeTeamMatches: response.fixtures
-        });
-      }).catch((error) => {
+        })
+      }).then(() => {
+        this.setState({
+          animating2: false
+        })
+      })
+      .catch((error) => {
         console.log(error.message);
       })
 
@@ -73,8 +86,13 @@ export default class About extends Component {
       .then((response) => {
         this.setState({
           awayTeamMatches: response.fixtures
-        });
-      }).catch((error) => {
+        })
+      }).then(() => {
+        this.setState({
+          animating3: false
+        })
+      })
+      .catch((error) => {
         console.log(error.message);
       })
   }
@@ -183,19 +201,28 @@ export default class About extends Component {
             style={styles.landing}
             source={require('../img/go.jpg')}>
             <View style={styles.info}>
+                {this.state.animating1 && 
+                  <ActivityIndicator
+                    size="large"
+                  />
+                }
                 {homeTeamImage}
                 <View style={styles.infoOrder}>
                   <Text style={styles.text1}>{day}</Text>
                   <Text style={styles.text2}>{date}</Text>
                   <Text style={styles.text2}>{params.time}</Text>
                 </View>
+                {this.state.animating1 && 
+                  <ActivityIndicator
+                    size="large"
+                  />
+                }
                 {awayTeamImage}
             </View>
           </Image>
-          <AboutInfo teams={this.state.teams} params={params} homeTeamForm={homeTeamForm} awayTeamForm={awayTeamForm} navigate={navigate}/>
+          <AboutInfo teams={this.state.teams} params={params} homeTeamForm={homeTeamForm} awayTeamForm={awayTeamForm} navigate={navigate} animating2={this.state.animating2} animating3={this.state.animating3}/>
         </View>
       </View>
-
     );
   }
 }

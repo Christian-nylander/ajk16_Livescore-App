@@ -53,15 +53,16 @@ export default class AboutInfo extends Component {
         <View style={styles.fourthContainer}>
           <Text style={styles.text2}>Form</Text>
           <View style={styles.winContainer}>
-              <View style={styles.streaks}>
-                {this.props.animating2 && 
-                  <ActivityIndicator
-                    size="large"
-                    style={styles.indicator}
-                  />
-                }
-                {this.props.homeTeamForm}
-              </View>
+            <View style={styles.streaks}>
+              {this.props.animating2 && 
+                <ActivityIndicator
+                  size="large"
+                  style={styles.indicator}
+                />
+              }
+              <Text style={{fontSize: 12, color: 'white'}}>{this.props.error2}</Text>
+              {this.props.homeTeamForm}
+            </View>
             <Image style={styles.imgStats} source={require('../img/bar-chart.png')} />
             <View style={styles.streaks}>
               {this.props.animating3 && 
@@ -70,6 +71,7 @@ export default class AboutInfo extends Component {
                     style={styles.indicator}
                   />
               }
+              <Text style={{fontSize: 12, color: 'white'}}>{this.props.error3}</Text>
               {this.props.awayTeamForm}
             </View>
           </View>

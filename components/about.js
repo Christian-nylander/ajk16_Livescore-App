@@ -37,7 +37,9 @@ export default class About extends Component {
       awayTeamMatches: [],
       animating1: true,
       animating2: true,
-      animating3: true
+      animating3: true,
+      error2: '',
+      error3: ''
     }
   }
 
@@ -75,6 +77,10 @@ export default class About extends Component {
       })
       .catch((error) => {
         console.log(error.message);
+        this.setState({
+          animating2: false,
+          error2: 'Could not load. Try again'
+        })
       })
 
     fetch(params.awayLink + '/fixtures', {
@@ -94,6 +100,10 @@ export default class About extends Component {
       })
       .catch((error) => {
         console.log(error.message);
+        this.setState({
+          animating3: false,
+          error3: 'Could not load. Try again'
+        })
       })
   }
 
@@ -220,7 +230,7 @@ export default class About extends Component {
                 {awayTeamImage}
             </View>
           </Image>
-          <AboutInfo teams={this.state.teams} params={params} homeTeamForm={homeTeamForm} awayTeamForm={awayTeamForm} navigate={navigate} animating2={this.state.animating2} animating3={this.state.animating3}/>
+          <AboutInfo teams={this.state.teams} params={params} homeTeamForm={homeTeamForm} awayTeamForm={awayTeamForm} navigate={navigate} animating2={this.state.animating2} animating3={this.state.animating3} error2={this.state.error2} error3={this.state.error3}/>
         </View>
       </View>
     );

@@ -39,7 +39,7 @@ export default class AboutInfo extends Component {
         <TouchableHighlight onPress={() => navigate("Table")}>
           <View style={styles.secondContainer}>
             <Image style={styles.img} source={require('../img/trophy.png')} />
-            <Text style={styles.text}>Premier League</Text>
+            <Button style={styles.text4} onPress={() => navigate("Table")}>Premier League</Button>
           </View>
         </TouchableHighlight>
         <View style={styles.thirdContainer}>
@@ -57,6 +57,7 @@ export default class AboutInfo extends Component {
                 {this.props.animating2 && 
                   <ActivityIndicator
                     size="large"
+                    style={styles.indicator}
                   />
                 }
                 {this.props.homeTeamForm}
@@ -66,6 +67,7 @@ export default class AboutInfo extends Component {
               {this.props.animating3 && 
                   <ActivityIndicator
                     size="large"
+                    style={styles.indicator}
                   />
               }
               {this.props.awayTeamForm}
@@ -116,6 +118,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     top: -10,
   },
+    text4: {
+    color: "white",
+    textAlign: "center",
+    fontSize: 16,
+    top: -6,
+  },
   text2: {
     color: "white",
     textAlign: "center",
@@ -158,5 +166,8 @@ const styles = StyleSheet.create({
     height: 22,
     top: 10,
     left: -2
-  }
+  },
+  indicator: {
+    left: "80%"
+  },
 });

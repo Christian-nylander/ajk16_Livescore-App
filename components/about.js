@@ -8,7 +8,7 @@ import TopBanner from './topBanner';
 import AboutInfo from './aboutInfo'
 
 const width = '72%';
-const height = '40%';
+const height = '50%';
 
 export default class About extends Component {
 
@@ -272,6 +272,7 @@ const styles = StyleSheet.create({
 
   },
   img3: {
-    top: 6
+    top: 6,
+    
   }
 });

@@ -53,9 +53,23 @@ export default class Table extends Component {
         count = false;
       return(
         <View key={item.position} style={styles.container}>
-          <View style={styles.containerOne}>
-            <Text style={styles.text}>{item.position}</Text>
-          </View>
+          {item.position < 4 ? (
+            <View style={styles.containerOneGreen}>
+              <Text style={styles.text}>{item.position}</Text>
+            </View>
+            ) : (item.position === 4 ? (
+            <View style={styles.containerOneBlue}>
+              <Text style={styles.text}>{item.position}</Text>
+            </View>
+            ) : (item.position > 17 ? (
+            <View style={styles.containerOneRed}>
+              <Text style={styles.text}>{item.position}</Text>
+            </View>
+            ) : (
+            <View style={styles.containerOne}>
+              <Text style={styles.text}>{item.position}</Text>
+            </View>
+            )))}
             <View style={styles.containerTwo}>
               <Text style={styles.text1}>{item.teamName}</Text>
             </View>
@@ -82,9 +96,23 @@ export default class Table extends Component {
       count = true;
       return(
         <View key={item.position} style={styles.container}>
-          <View style={styles.containerOne2}>
-            <Text style={styles.text}>{item.position}</Text>
-          </View>
+          {item.position < 4 ? (
+            <View style={styles.containerOne2Green}>
+              <Text style={styles.text}>{item.position}</Text>
+            </View>
+            ) : (item.position === 4 ? (
+            <View style={styles.containerOne2Blue}>
+              <Text style={styles.text}>{item.position}</Text>
+            </View>
+            ) : (item.position > 17 ? (
+            <View style={styles.containerOne2Red}>
+              <Text style={styles.text}>{item.position}</Text>
+            </View>
+            ) : (
+            <View style={styles.containerOne}>
+              <Text style={styles.text}>{item.position}</Text>
+            </View>
+            )))}
             <View style={styles.containerTwo2}>
               <Text style={styles.text1}>{item.teamName}</Text>
             </View>
@@ -162,6 +190,21 @@ const styles = StyleSheet.create({
     height: 26,
     backgroundColor: "#1f1f1f",
   },
+  containerOneGreen: {
+    width: widthSmal,
+    height: 26,
+    backgroundColor: "#315027"
+  },
+  containerOneBlue: {
+    width: widthSmal,
+    height: 26,
+    backgroundColor: '#3b4a36'
+  },
+  containerOneRed: {
+    width: widthSmal,
+    height: 26,
+    backgroundColor: '#794a3b'
+  },
   containerTwo: {
     width: widthBig,
     backgroundColor: "#282828",
@@ -176,6 +219,21 @@ const styles = StyleSheet.create({
     width: widthSmal,
     height: 26,
     backgroundColor: "#1f1f1f",
+  },
+  containerOne2Green: {
+    width: widthSmal,
+    height: 26,
+    backgroundColor: "#315027"
+  },
+  containerOne2Blue: {
+    width: widthSmal,
+    height: 26,
+    backgroundColor: '#3b4a36'
+  },
+  containerOne2Red: {
+    width: widthSmal,
+    height: 26,
+    backgroundColor: '#794a3b'
   },
   containerTwo2: {
     width: widthBig,
@@ -193,7 +251,7 @@ const styles = StyleSheet.create({
     color: "white",
   },
   text1: {
-    fontSize: 16,
+    fontSize: 14,
     color: "white",
     left: 10
   },

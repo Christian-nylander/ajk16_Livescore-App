@@ -7,7 +7,7 @@ import moment from 'moment';
 import TopBanner from './topBanner';
 import AboutInfo from './aboutInfo'
 
-const width = '72%';
+const width = '80%';
 const height = '50%';
 
 export default class About extends Component {
@@ -23,7 +23,7 @@ export default class About extends Component {
   },
   headerTitleStyle: {
   fontSize: 18,
-  left: 70,
+  left: 90,
   fontWeight: '300',
   top: 10
   }
@@ -211,7 +211,7 @@ export default class About extends Component {
             style={styles.landing}
             source={require('../img/go.jpg')}>
             <View style={styles.info}>
-                {this.state.animating1 && 
+                {this.state.animating1 &&
                   <ActivityIndicator
                     size="large"
                   />
@@ -222,7 +222,7 @@ export default class About extends Component {
                   <Text style={styles.text2}>{date}</Text>
                   <Text style={styles.text2}>{params.time}</Text>
                 </View>
-                {this.state.animating1 && 
+                {this.state.animating1 &&
                   <ActivityIndicator
                     size="large"
                   />
@@ -283,6 +283,6 @@ const styles = StyleSheet.create({
   },
   img3: {
     top: 6,
-    
+
   }
 });

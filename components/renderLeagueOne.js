@@ -47,7 +47,7 @@ export default class renderLeagueOne extends Component {
                 <TouchableHighlight onPress={() => navigate("About", {homeTeamName: item.homeTeamName, awayTeamName: item.awayTeamName, homeLink: item._links.homeTeam.href, awayLink: item._links.awayTeam.href, competition: item._links.competition.href, navigate: navigate, date: date, time: time})}>
                   <Image
                     style={styles.infoImage}
-                    source={require('../img/Untitled-3.png')}
+                    source={require('../img/information.png')}
                   />
                 </TouchableHighlight>
               </View>
@@ -114,7 +114,8 @@ return(
       width: 50
     },
     infoImage: {
-      height: 59
+      height: 59,
+      alignSelf: 'flex-end',  
     },
     all: {
       color: "white",
@@ -126,12 +127,15 @@ return(
     },
     noGames: {
       opacity: 0.5,
-      left: 120,
       width: 110,
       height: 110,
-      top: 100
+      top: 10
     },
     imgPosition: {
-      height: 300,
+      height: 400,
+      flex: 1,
+       flexDirection: 'column',
+       justifyContent: 'center',
+       alignItems: 'center',
     }
   });

@@ -41,7 +41,7 @@ export default class Table extends Component {
   },
   headerTitleStyle: {
   fontSize: 18,
-  left: 90,
+  left: 110,
   fontWeight: '300',
   top: 10
   }
@@ -58,7 +58,7 @@ export default class Table extends Component {
               <Text style={styles.text}>{item.position}</Text>
             </View>
             ) : (item.position === 4 ? (
-            <View style={styles.containerOneBlue}>
+            <View style={styles.containerOnedDarkGreen}>
               <Text style={styles.text}>{item.position}</Text>
             </View>
             ) : (item.position > 17 ? (
@@ -97,15 +97,15 @@ export default class Table extends Component {
       return(
         <View key={item.position} style={styles.container}>
           {item.position < 4 ? (
-            <View style={styles.containerOne2Green}>
+            <View style={styles.secondContainerGreen}>
               <Text style={styles.text}>{item.position}</Text>
             </View>
             ) : (item.position === 4 ? (
-            <View style={styles.containerOne2Blue}>
+            <View style={styles.secondContainerBlue}>
               <Text style={styles.text}>{item.position}</Text>
             </View>
             ) : (item.position > 17 ? (
-            <View style={styles.containerOne2Red}>
+            <View style={styles.secondContainerRed}>
               <Text style={styles.text}>{item.position}</Text>
             </View>
             ) : (
@@ -178,7 +178,7 @@ export default class Table extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row"
+    flexDirection: "row",
   },
   leaguetext: {
     color: "white",
@@ -187,97 +187,99 @@ const styles = StyleSheet.create({
   },
   containerOne: {
     width: widthSmal,
-    height: 26,
+    height: 28,
     backgroundColor: "#1f1f1f",
   },
   containerOneGreen: {
     width: widthSmal,
-    height: 26,
+    height: 28,
     backgroundColor: "#315027"
   },
-  containerOneBlue: {
+  containerOnedDarkGreen: {
     width: widthSmal,
-    height: 26,
+    height: 28,
     backgroundColor: '#3b4a36'
   },
   containerOneRed: {
     width: widthSmal,
-    height: 26,
+    height: 28,
     backgroundColor: '#794a3b'
   },
   containerTwo: {
     width: widthBig,
     backgroundColor: "#282828",
-    height: 26,
+    height: 28,
   },
   containerThree: {
     width: widthSmal,
     backgroundColor: "#282828",
-    height: 26,
+    height: 28,
   },
-  containerOne2: {
+  secondContainer: {
     width: widthSmal,
-    height: 26,
+    height: 28,
     backgroundColor: "#1f1f1f",
   },
-  containerOne2Green: {
+  secondContainerGreen: {
     width: widthSmal,
-    height: 26,
+    height: 28,
     backgroundColor: "#315027"
   },
-  containerOne2Blue: {
+  secondContainerBlue: {
     width: widthSmal,
-    height: 26,
+    height: 28,
     backgroundColor: '#3b4a36'
   },
-  containerOne2Red: {
+  secondContainerRed: {
     width: widthSmal,
-    height: 26,
+    height: 28,
     backgroundColor: '#794a3b'
   },
   containerTwo2: {
     width: widthBig,
     backgroundColor: "#383838",
-    height: 26,
+    height: 28,
   },
   containerThree2: {
     width: widthSmal,
     backgroundColor: "#383838",
-    height: 26,
+    height: 28,
   },
   text: {
     fontSize: 16,
     textAlign: "center",
     color: "white",
+    top: 3
   },
   text1: {
     fontSize: 14,
     color: "white",
-    left: 10
+    left: 10,
+    top: 3
   },
   bannerFlexOne: {
     width: widthSmal,
-    height: 26,
+    height: 28,
     backgroundColor: "#171717",
   },
   bannerFlexTwo: {
     width: widthBig,
-    height: 26,
+    height: 28,
     backgroundColor: "#171717",
   },
   bannerFlexThree: {
     width: widthSmal,
     backgroundColor: "#171717",
-    height: 26,
+    height: 28,
   },
   leagueContainer: {
-    height: 26,
+    height: 28,
     backgroundColor: "black",
     flex: 1,
     flexDirection: "row"
   },
   flag: {
-    width: 26,
+    width: 28,
     height: 16,
     top: 5,
     left: 5

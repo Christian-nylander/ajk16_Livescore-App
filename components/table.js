@@ -41,7 +41,7 @@ export default class Table extends Component {
   },
   headerTitleStyle: {
   fontSize: 18,
-  left: 110,
+  left: "22%",
   fontWeight: '300',
   top: 10
   }

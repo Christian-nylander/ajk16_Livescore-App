@@ -7,7 +7,7 @@ import moment from 'moment';
 import TopBanner from './topBanner';
 import AboutInfo from './aboutInfo'
 
-const width = '80%';
+const width = '100%';
 const height = '50%';
 
 export default class About extends Component {
@@ -23,7 +23,7 @@ export default class About extends Component {
   },
   headerTitleStyle: {
   fontSize: 18,
-  left: 90,
+  left: "22%",
   fontWeight: '300',
   top: 10
   }
@@ -243,7 +243,8 @@ const styles = StyleSheet.create({
     backgroundColor: "rgb(47, 54, 61);"
   },
   landing: {
-    height: 220
+    height: 220,
+    width: "100%"
   },
   upperContainer: {
     flex: 1,

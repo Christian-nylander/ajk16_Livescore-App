@@ -115,7 +115,7 @@ return(
     },
     infoImage: {
       height: 59,
-      alignSelf: 'flex-end',  
+      alignSelf: 'flex-end',
     },
     all: {
       color: "white",

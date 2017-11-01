@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image } from 'react-native';
-import { Constants } from 'expo';
+import { Text, View, StyleSheet, Image } from 'react-native';
 import moment from 'moment';
 
 //Components

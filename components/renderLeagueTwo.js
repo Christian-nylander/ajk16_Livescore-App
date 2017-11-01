@@ -1,3 +1,5 @@
+//Component not in use
+
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image} from 'react-native';
 import { Constants } from 'expo';

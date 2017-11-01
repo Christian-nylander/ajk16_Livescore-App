@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image } from 'react-native';
-import { Constants } from 'expo';
-import Button from 'react-native-button';
+import { Text, View, StyleSheet, ActivityIndicator, ScrollView, Image } from 'react-native';
 import moment from 'moment';
 
-import TopBanner from './topBanner';
 import AboutInfo from './aboutInfo'
 
 const width = '100%';
@@ -261,14 +258,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent:"space-around"
   },
-  infoOrder: {
-
-  },
   text1: {
     color: "white",
     fontSize: 30,
     textAlign: "center"
-
   },
   text2: {
     color: "white",
@@ -280,10 +273,8 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 18,
     textAlign: "center"
-
   },
   img3: {
     top: 6,
-
   }
 });

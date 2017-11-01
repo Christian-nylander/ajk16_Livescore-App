@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image } from 'react-native';
-import { Constants } from 'expo';
-import Button from 'react-native-button';
+import { Text, View, StyleSheet, ScrollView, Image } from 'react-native';
 
-import TopBanner from './topBanner';
 let count = true;
 const widthBig= "50%";
 const widthSmal = "8.3%";

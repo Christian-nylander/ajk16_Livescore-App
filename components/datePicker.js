@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image, TouchableHighlight } from 'react-native';
-import { Constants } from 'expo';
+import { View, StyleSheet } from 'react-native';
 import moment from 'moment';
 import CalendarStrip from 'react-native-calendar-strip';
-
-// let count = 0;
-// let count1 = 0;
-// let date = moment(new Date()).format("YYYY-MM-DD")
 
 export default class datePicker extends Component {
   pickDate = (date) => {

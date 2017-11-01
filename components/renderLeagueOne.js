@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image, TouchableHighlight} from 'react-native';
-import { Constants } from 'expo';
-import Button from 'react-native-button';
+import { Text, View, StyleSheet, Image, TouchableHighlight} from 'react-native';
 import moment from 'moment';
 let matchHit = 0;
 
@@ -56,24 +54,24 @@ export default class renderLeagueOne extends Component {
         }
     });
     if(matchHit > 0){
-  matchHit = 0;
-  return (
-    <View>
-      <View>{matchData}</View>
-    </View>
-  );
-}
-else {
-matchHit = 0;
-return(
-  <View style={styles.imgPosition}>
-    <Image
-      style={styles.noGames}
-      source={require('../img/nomages.png')}
-    />
-  </View>
-  );
-}
+      matchHit = 0;
+      return (
+        <View>
+          <View>{matchData}</View>
+        </View>
+      );
+    }
+    else {
+    matchHit = 0;
+    return(
+      <View style={styles.imgPosition}>
+        <Image
+          style={styles.noGames}
+          source={require('../img/nomages.png')}
+        />
+      </View>
+      );
+    }
   }
 }
 

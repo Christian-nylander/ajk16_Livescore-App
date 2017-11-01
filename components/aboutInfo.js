@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ListView, FlatList, ActivityIndicator, ScrollView, Image, TouchableHighlight } from 'react-native';
-import { Constants } from 'expo';
+import { Text, View, StyleSheet, ActivityIndicator, Image, TouchableHighlight } from 'react-native';
 import Button from 'react-native-button';
-import TopBanner from './topBanner';
 
 const center = '50%';
 

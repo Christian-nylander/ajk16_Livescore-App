@@ -34,3 +34,16 @@ React Native
 ## API
 
 [Football-data.org](http://www.football-data.org/index)
+
+The football-data API provides football data of all major european leagues in a machine-readable way. By data I mean fixtures, teams, players, results and more. All this information is provided via an easy-to-use RESTful API in JSON (only) representation.
+The API is easy to use with logical endpoints that is all explained in the thorough documentation on the website.
+
+The API is usable without a key, but it is easy to sign up for free to get a key and get added benefits. With the key you will increase the rate limit from 50 requests per day to 50 request per minute, you will also get CORS support to use the API directly from JS-Frameworks like Angular.js or the like. It also helps the developer of the API to get usage analytics.
+
+## Suggestions for further development
+
+Due to time constraints this is as far as we got with the project. But there is ofcourse more you could do to further develop it.
+
+In our project we only show matches from the Premier League but it is possible to get data about other european leagues as well from the API. It is also possible to get data about the players in the teams and display it. For further use you could build your own API and show whatever data you would like.
+We also talked about using some kind of betting API with the project. So you could see the odds of what team is favored to win. 
+

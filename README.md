@@ -63,7 +63,7 @@ React Native
 
 [Football-data.org](http://www.football-data.org/index)
 
-## Devices used during development
+## Devices tested during development
 
 * LG G3
 * Motorola G5

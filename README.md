@@ -1,6 +1,6 @@
 AJK16G Jensen Yrkeshögskola
-![alt text](https://github.com/eriksvedenlund/FootballApp/raw/master/img/Screenshot_1.png?raw=true)
-![alt text](https://github.com/eriksvedenlund/FootballApp/raw/master/img/Screenshot_2.png?raw=true)
+
+![alt text](https://github.com/eriksvedenlund/FootballApp/raw/master/img/Screenshot_1.png?raw=true)![alt text](https://github.com/eriksvedenlund/FootballApp/raw/master/img/Screenshot_2.png?raw=true)
 ## Contributors
 
 [Erik Svedenlund](https://www.linkedin.com/in/erik-svedenlund-b8829512a/)
